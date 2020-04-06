@@ -1,0 +1,40 @@
+#!/bin/sh
+
+set -e
+exec 2>&1
+set -u
+
+if [ -n "${DEB_HOST_GNU_TYPE:-}" ]; then
+    CROSS_COMPILE="$DEB_HOST_GNU_TYPE-"
+else
+    CROSS_COMPILE=
+fi
+cd "$AUTOPKGTEST_TMP"
+
+echo "1..1"
+
+cat > trivial.c <<'EOF'
+#include <assert.h>
+
+#include <libwacom/libwacom.h>
+
+int main (void)
+{
+    WacomDeviceDatabase *db;
+
+    db = libwacom_database_new();
+    assert(db != NULL);
+    libwacom_database_destroy(db);
+    return 0;
+}
+EOF
+
+# Deliberately word-splitting, that's how pkg-config works:
+# shellcheck disable=SC2046
+${CROSS_COMPILE}gcc -o trivial trivial.c $(${CROSS_COMPILE}pkg-config --cflags --libs libwacom)
+test -x trivial
+./trivial
+echo "ok 1"
+
+# Static linking not tested here: libwacom depends on libudev which is
+# not available as a static library

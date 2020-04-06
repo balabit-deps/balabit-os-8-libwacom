@@ -1,0 +1,3 @@
+Tests: build
+Depends: build-essential, libwacom-dev
+Restrictions: superficial

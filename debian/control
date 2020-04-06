@@ -1,0 +1,85 @@
+Source: libwacom
+Section: libs
+Priority: optional
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+XSBC-Original-Maintainer: Timo Aaltonen <tjaalton@debian.org>
+Build-Depends: debhelper-compat (= 12),
+ meson,
+ libglib2.0-dev,
+ libgtk2.0-dev,
+ libgudev-1.0-dev,
+ librsvg2-dev,
+ libxml2-dev,
+Standards-Version: 4.4.1
+Vcs-Git: https://salsa.debian.org/debian/libwacom.git
+Vcs-Browser: https://salsa.debian.org/debian/libwacom
+
+Package: libwacom2
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends},
+ libwacom-common (= ${source:Version}),
+Recommends:
+ libwacom-bin (= ${binary:Version}),
+Pre-Depends: ${misc:Pre-Depends}
+Multi-Arch: same
+Description: Wacom model feature query library
+ libwacom is a library to identify wacom tablets and their model-specific
+ features. It provides easy access to information such as "is this a built-in
+ on-screen tablet", "what is the size of this model", etc.
+
+Package: libwacom2-udeb
+Package-Type: udeb
+Section: debian-installer
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends},
+ libwacom-common-udeb (= ${source:Version}),
+Description: Wacom model feature query library
+ This is a udeb, or a microdeb, for the debian-installer.
+
+Package: libwacom-bin
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends},
+Multi-Arch: foreign
+Description: Wacom model feature query library -- binaries
+ libwacom is a library to identify wacom tablets and their model-specific
+ features. It provides easy access to information such as "is this a built-in
+ on-screen tablet", "what is the size of this model", etc.
+ .
+ This package contains the utilities which are used by the libraries.
+
+Package: libwacom-common
+Section: libs
+Architecture: all
+Depends: ${misc:Depends},
+Replaces: libwacom0 (<= 0.2-1)
+Multi-Arch: foreign
+Description: Wacom model feature query library (common files)
+ libwacom is a library to identify wacom tablets and their model-specific
+ features. It provides easy access to information such as "is this a built-in
+ on-screen tablet", "what is the size of this model", etc.
+ .
+ This package contains common data files for libwacom.
+
+Package: libwacom-common-udeb
+Package-Type: udeb
+Section: debian-installer
+Architecture: all
+Depends: ${misc:Depends},
+Description: Wacom model feature query library (common files)
+ This is a udeb, or a microdeb, for the debian-installer.
+
+Package: libwacom-dev
+Section: libdevel
+Architecture: any
+Multi-Arch: same
+Depends: ${shlibs:Depends}, ${misc:Depends},
+ libwacom2 (= ${binary:Version}),
+ libglib2.0-dev,
+ libgudev-1.0-dev,
+Recommends: pkg-config
+Description: Wacom model feature query library (development files)
+ libwacom is a library to identify wacom tablets and their model-specific
+ features. It provides easy access to information such as "is this a built-in
+ on-screen tablet", "what is the size of this model", etc.
+ .
+ This package contains the development files for libwacom.

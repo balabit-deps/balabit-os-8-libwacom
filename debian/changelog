@@ -1,0 +1,215 @@
+libwacom (1.3-2ubuntu1) focal; urgency=medium
+
+  * Merge with Debian; remaining changes:
+    - Double svg-layout-exists test timeout for riscv64.
+
+ -- Matthias Klose <doko@ubuntu.com>  Mon, 06 Apr 2020 14:58:39 +0200
+
+libwacom (1.3-2) unstable; urgency=medium
+
+  [ Debian Janitor ]
+  * Transition to automatic debug package (from: libwacom2-dbg).
+  * Set upstream metadata fields: Repository.
+  * Replace XC-Package-Type with Package-Type.
+  * Use canonical URL in Vcs-Browser.
+
+  [ Timo Aaltonen ]
+  * control: Add libgudev-1.0-dev to -dev depends. Fixes the
+    autopkgtest.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Sat, 04 Apr 2020 22:05:09 +0300
+
+libwacom (1.3-1ubuntu1) focal; urgency=medium
+
+  * Double svg-layout-exists test timeout for riscv64.
+
+ -- William Grant <wgrant@ubuntu.com>  Sat, 04 Apr 2020 10:29:29 +1100
+
+libwacom (1.3-1) unstable; urgency=medium
+
+  * New upstream release.
+  * control: Use debhelper-compat, bump to 12.
+  * tests: Make autopkgtests cross-test-friendly. (Closes: #946535)
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Fri, 27 Mar 2020 10:21:15 +0200
+
+libwacom (1.1-2) unstable; urgency=medium
+
+  [ Simon McVittie ]
+  * control: Mark libwacom-dev M-A: same. (Closes: #935409)
+  * d/tests: Add a superficial test for linking with libwacom.
+
+  [ Debian Janitor ]
+  * Transition to automatic debug package (from: libwacom2-dbg).
+  * Set upstream metadata fields: Repository.
+  * Replace XC-Package-Type with Package-Type.
+  * Use canonical URL in Vcs-Browser.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Thu, 21 Nov 2019 18:20:24 +0200
+
+libwacom (1.1-1) unstable; urgency=medium
+
+  * New upstream release.
+  * rules: Use udev rules file from the build.
+  * symbols: Updated.
+  * Switch to meson.
+  * control: Bump policy to 4.4.1.
+  * Bump debhelper to 12.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Fri, 04 Oct 2019 12:50:43 +0300
+
+libwacom (0.32-1) unstable; urgency=medium
+
+  * New upstream release.
+  * Bump compat to 11, drop dh-autoreconf from build-depends.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Thu, 28 Feb 2019 11:14:43 +0200
+
+libwacom (0.31-1) unstable; urgency=medium
+
+  [ Ondřej Nový ]
+  * d/copyright: Use https protocol in Format field
+  * d/control: Deprecating priority extra as per policy 4.0.1
+
+  [ Timo Aaltonen ]
+  * New upstream release.
+  * rules: Migrate to dh_missing.
+  * libwacom-bin.install: Add a manpage.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Wed, 17 Oct 2018 10:12:32 +0300
+
+libwacom (0.30-1) unstable; urgency=medium
+
+  * New upstream release.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Sun, 05 Aug 2018 00:57:28 +0300
+
+libwacom (0.29-1) unstable; urgency=medium
+
+  * New upstream release.
+  * watch: Updated.
+  * control: Update VCS urls.
+  * Bump debhelper to 10.
+  * control: Bump policy to 4.1.3, no changes.
+  * symbols: Updated.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Wed, 14 Mar 2018 10:05:38 +0200
+
+libwacom (0.26-1) unstable; urgency=medium
+
+  * New upstream release. (Closes: #872871)
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Thu, 21 Sep 2017 14:50:34 +0300
+
+libwacom (0.24-1) unstable; urgency=medium
+
+  * New upstream release.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Thu, 04 May 2017 15:06:17 +0300
+
+libwacom (0.22-1) unstable; urgency=medium
+
+  * New upstream release.
+  * symbols: Updated.
+  * rules, common*.install: Generate udev rules and install them.
+    (Closes: #827671)
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Sat, 17 Sep 2016 09:30:58 +0300
+
+libwacom (0.19-1) unstable; urgency=medium
+
+  * New upstream release.
+  * Add udebs for the installer. (Closes: #815717)
+  * copyright: Drop trailing / from Files-Excluded.
+  * control: Use https urls.
+  * control: Bump policy to 3.9.8, no changes.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Tue, 10 May 2016 11:33:14 +0300
+
+libwacom (0.18-1) unstable; urgency=medium
+
+  * New upstream release. (LP: #1534965)
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Wed, 20 Jan 2016 09:53:01 +0200
+
+libwacom (0.17-1) unstable; urgency=medium
+
+  * New upstream release.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Tue, 15 Dec 2015 10:01:17 +0200
+
+libwacom (0.15-1) unstable; urgency=medium
+
+  * New upstream release. (Closes: #781103)
+  * control:
+    - update my email
+    - bump policy to 3.9.6, no changes
+    - update vcs urls
+    - add libwacom-bin and it's build-deps
+  * symbols: Add a new symbol.
+  * rules:
+    - use --fail-missing
+    - install to debian/tmp
+  * gbp.conf: Added.
+  * copyright: Exclude doc/html from the tarball.
+  * symbols: Updated.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Sun, 16 Aug 2015 00:59:05 +0300
+
+libwacom (0.8-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Timo Aaltonen <tjaalton@ubuntu.com>  Sun, 13 Oct 2013 00:03:43 +0300
+
+libwacom (0.7-1) experimental; urgency=low
+
+  * New upstream release.
+  * libwacom2.symbols: Updated.
+  * control: Drop DM-Upload-Allowed, obsolete
+  * control: Update policy to 3.9.4, no changes.
+
+ -- Timo Aaltonen <tjaalton@ubuntu.com>  Fri, 18 Jan 2013 10:51:16 +0200
+
+libwacom (0.6-1) unstable; urgency=low
+
+  * New upstream release.
+    - fixes crashers when the stylus definition is missing from the database
+  * Drop all patches, found upstream.
+
+ -- Timo Aaltonen <tjaalton@ubuntu.com>  Sat, 29 Sep 2012 14:08:57 +0300
+
+libwacom (0.5-1) unstable; urgency=low
+
+  * New upstream release.
+  * git-add-missing-buttons.patch dropped, upstream.
+  * Add crasher fixes from upstream
+    - git-fix-generic-stylus-missing-an-eraser.patch
+    - git-add-generic-eraser-to-bamboo.patch
+  * Add fixes from the mailing list
+    - fix-an-error-message.patch
+    - fix-null-assert.patch
+  * libwacom2.symbols: Add new symbols.
+
+ -- Timo Aaltonen <tjaalton@ubuntu.com>  Fri, 01 Jun 2012 00:12:50 +0300
+
+libwacom (0.4-1) unstable; urgency=low
+
+  * New upstream release. (Closes: #667064)
+    - Add Intuos 5, Bamboo One definitions
+  * Drop git_touchpad_tablet.patch, included upstream.
+  * Add git-add-missing-buttons.patch, missing button sections for Intuos
+    and Cintiq series.
+  * libwacom2.symbols: Add a new symbol.
+  * control: Add DM-Upload-Allowed field.
+  * copyright: Update the format url.
+
+ -- Timo Aaltonen <tjaalton@ubuntu.com>  Fri, 30 Mar 2012 11:28:44 +0300
+
+libwacom (0.3-1) unstable; urgency=low
+
+  * Initial upload. Closes: #659700
+  * git_touchpad_tablet.patch: "Don't fail to create WacomDevice for Touch"
+    should fix gnome-settings-daemon segfault on some devices.
+
+ -- Timo Aaltonen <tjaalton@ubuntu.com>  Tue, 20 Mar 2012 19:33:21 +0200
