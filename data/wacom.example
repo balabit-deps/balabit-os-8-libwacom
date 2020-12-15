@@ -1,0 +1,160 @@
+# Example model file description for a tablet
+#
+# Make sure to give it a recognisable name, with the ".tablet" suffix
+[Device]
+
+# The name is the vendor and product name announced by the kernel
+Name=Wacom Intuos4 6x9
+
+# DeviceMatch includes the bus (usb, bluetooth, serial), the vendor ID and
+# product ID. This is the connector used, not whatever name the kernel
+# might give it, so some "Wacom Serial" builtin devices will be USB
+# as that's how they're connected.
+#
+# For example:
+# $ lsusb | grep Wacom
+# Bus 002 Device 003: ID 056a:00bc Wacom Co., Ltd Intuos4 6x9
+# will give you the device match below.
+#
+# You can find a full list of known Device IDs at:
+# https://github.com/linuxwacom/input-wacom/wiki/Device-IDs
+#
+# Do not add 0x in front of the hex numbers, make sure to pad each ID
+# so it has exactly 4 digits.
+DeviceMatch=usb:056a:00bc
+
+# Paired PID includes the match line of any device that share the same
+# physical device but has different product or vendor ids (e.g. the touch
+# device on the 24HDT). The format of the match line is identical to
+# DeviceMatch but only one value is permitted.
+# Note: the PIDs listed may not be libwacom devices themselves.
+PairedIDs=usb:056a:0335
+
+# Class of the tablet. Valid classes include Intuos3, Intuos4, Graphire, Bamboo, Cintiq
+# If unsure, or not applicable (the tablet isn't stand-alone for
+# example), just leave it out.
+Class=Intuos4
+
+# (Optional) Width in inches, as advertised by the manufacturer
+Width=9
+
+# (Optional) Height in inches, as advertised by the manufacturer
+Height=6
+
+# Integration flags, is the tablet is part of the system, such as a
+# TabletPC or integrated in the screen, ie a screen tablet (most serial
+# tablets, Cintiqs)
+# Note, if unspecified, the integration flags will be taken from the kernel.
+# Using an empty value or "None" forces the intergration flags to remain unset
+# even if the relevant kernel flags would state otherwise.
+IntegratedIn=Display;System
+
+# Styli
+#
+# This is a list of stylus IDs supported by the tablet. This is the
+# hardest thing to gather, but note that this is only needed for the
+# professional range of tablets, as the consumer range of devices all
+# have a single stylus (stylus + 2 buttons + eraser), just like our
+# generic stylus.
+#
+# Consumer range:
+# - Graphire
+# - Bamboo
+#
+# Professional range:
+# - Cintiq
+# - Intuos
+#
+# In general, differently sized models of the same range support the same
+# styli, so you can copy/paste the list from another definition.
+#
+# After that, you can try piecing the stylus list from the names of the
+# styli in libwacom.stylus, using the Wacom webshop as a reference
+# (how many supported styli, what do they look like, etc.)
+#
+# Finally, if you cannot find any information about the styli supported
+# by your device, you will need to gather the "Wacom Serial IDs",
+# and getting each stylus closer to the tablet.
+Styli=0x802;0x804;0x40802;0x80c;0x80a;0x4080a;0x90a;0x20802;0x902;
+
+# Optional features that this tablet supports
+# Some features are dependent on the actual tool used, e.g. not all styli
+# have an eraser and some styli have additional custom axes (e.g. the
+# airbrush pen). These features describe those available on the tablet.
+#
+# Features not set in a file default to false/0
+
+[Features]
+# This tablet supports styli (and erasers, if present on the actual stylus)
+Stylus=true
+
+# Whether the tablet can be used left-handed
+# This is only for stand-alone tablets. The tablet
+# is deemed reversible if the tablet can be turned 180 degrees
+# so buttons are placed on the other side. The Intuos4 tablet
+# is a great example of that.
+Reversible=true
+
+# This tablet supports touch.
+Touch=false
+
+# This tablet provides a hardware touch switch.
+TouchSwitch=false
+
+# This tablet has a touch ring (Intuos4 and Cintiq 24HD)
+# A touch ring is a circular button that responds to touch
+# (rather than clicks):
+# http://intuos.wacom.com/americas/touch-ring.php
+Ring=true
+# This tablet has a second touch ring (Cintiq 24HD)
+Ring2=false
+
+# This tablet's number of strips, default is zero
+NumStrips=1
+
+# Number of buttons on the tablet
+Buttons=9
+
+# Metadata about the buttons on the tablet
+# Buttons are "numbered" using upper-case letters
+[Buttons]
+# Location of the buttons
+Left=A;B
+Right=C;D
+Top=
+Bottom=
+# The evdev codes for the buttons in order A, B, C, ...
+# The code must be defined for all buttons or this line is ignored
+EvdevCodes=0x110;0x112;0x111;0x113
+
+#####################
+# ADVANCED FEATURES #
+#####################
+
+# Those are only needed for a few professional tablets
+# for which the values have already been filled in.
+
+# Which buttons have OLEDs associated to them
+# Only the Intuos4 devices have that right now
+# http://101.wacom.com/i4settings/images/expresskeys-feature.jpg
+OLEDs=B;C;D;E;F;G;H;I
+
+# The location of the various rings, if associated with a button
+# or buttons.
+# For example, a single button in the middle of the touchring, like
+# on the Intuos4 tablets. You will need to mention the number of modes
+# that the button allows if there isn't one button per mode.
+Ring=A
+RingNumModes=4
+# Or the 2nd touchring associated with 3 buttons like the Cintiq24HD
+Ring2=I;J;K
+# Implied, as we have 3 buttons for that ring
+Ring2NumModes=3
+
+# If the touchstrips have mode toggling through a button
+# like on the Cintiq 21UX2
+Touchstrip=A
+Touchstrip2=J
+# We assume the same number of modes for each of the touchstrips
+# if there is more than one
+StripsNumModes=4
