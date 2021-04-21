@@ -1,0 +1,263 @@
+commit a864679083c035eb08a75cf084a6564d589c0b1c
+Author: Jason Gerecke <killertofu@gmail.com>
+Date:   Fri Nov 1 11:51:20 2019 -0700
+
+    Add multiple AES stylus definitions
+    
+    Adds definitions for many different AES styli. The precise information
+    about supported features is hard to come by, but in general most pens
+    have two buttons (one of which is treated as an eraser) and can only
+    report pressure. A few exceptions are known or suspected and their
+    data has been set accordingly.
+    
+    Most of the new entries have comments that list several pens for a single
+    ID. The individual tools could potentially be distinguished with the aid
+    of vendor ID information available in the HID reports, but this data is
+    not forwarded to userspace by the kernel.
+    
+    For each pen I have included additional data in the comments that may or
+    may not be useful. The format of the comments are as follows:
+    
+      OEM1 ; BT device VID | BT device PID [ | FLAGS] ("Model Name" / ModelNumber)
+      OEM2 ; BT device VID | BT device PID [ | FLAGS] ("Model Name" / ModelNumber)
+      etc.
+    
+    For tools with a Bluetooth button, the VID:PID of the emulated keyboard
+    device is given. Tools without such a button use placeholder values of
+    VID_NONE and 0x0000. Additional flags provide further information:
+    
+      * BAT_SWAP / BAT_CHRG: Whether the pen uses replaceable batteries or
+        has an internal rechargeable battery.
+    
+      * BAT_HID / BAT_GATT: Whether the battery level for the Bluetooth button
+        is available through HID or through GATT.
+    
+      * BAT_SHARED: Indicates the pen has a single battery powering both the
+        AES and Bluetooth portions of the pen.
+    
+      * LONGPRESS: Bluetooth button supports the long-press gesture.
+    
+      * PROX: Proximity sensing feature available for Bluetooth button.
+    
+    Signed-off-by: Jason Gerecke <jason.gerecke@wacom.com>
+
+diff --git a/data/libwacom.stylus b/data/libwacom.stylus
+index 4bdef95..11c3e01 100644
+--- a/data/libwacom.stylus
++++ b/data/libwacom.stylus
+@@ -20,6 +20,204 @@ Buttons=2
+ Axes=Pressure;
+ Type=General
+ 
++[0x1]
++# Lenovo ; VID_NONE     | 0x0000 | BAT_SWAP
++Name=AES Pen
++Group=isdv4-aes
++Buttons=1
++IsEraser=true
++Axes=Pressure
++Type=Mobile
++
++[0x11]
++# Lenovo ; VID_NONE     | 0x0000 | BAT_CHRG
++Name=AES Pen
++Group=isdv4-aes
++Buttons=1
++IsEraser=true
++Axes=Pressure
++Type=Mobile
++
++[0x19]
++# Lenovo ; VID_LENOVO   | 0x60A8 | BAT_SWAP | BAT_HID
++Name=AES Pen
++Group=isdv4-aes
++Buttons=1
++IsEraser=true
++Axes=Pressure
++Type=Mobile
++
++[0x21]
++# HP     ; VID_NONE     | 0x0000 | BAT_SWAP
++# Huawei ; VID_NONE     | 0x0000 | BAT_SWAP
++# Lenovo ; VID_NONE     | 0x0000 | BAT_SWAP
++Name=AES Pen
++Group=isdv4-aes
++Buttons=1
++IsEraser=true
++Axes=Pressure
++Type=Mobile
++
++[0x31]
++# Dell   ; VID_BROADCOM | 0x81B9 | BAT_SWAP
++# HP     ; VID_CHICONY  | 0xB4A3 | BAT_SWAP | BAT_HID
++Name=AES Pen
++Group=isdv4-aes
++Buttons=1
++IsEraser=true
++Axes=Pressure
++Type=Mobile
++
++[0x39]
++# Huawei ; VID_HUAWEI   | 0x1091 | BAT_SWAP ("Huawei MatePen" / AF61)
++Name=AES Pen
++Group=isdv4-aes
++Buttons=1
++IsEraser=true
++Axes=Pressure
++Type=Mobile
++
++[0x49]
++# Wacom  ; VID_WACOM    | 0x035F | BAT_SWAP | BAT_GATT | BAT_SHARED | LONGPRESS ("Wacom Bamboo Ink" / CS321A)
++Name=Bamboo Ink
++Group=isdv4-aes
++Buttons=1
++IsEraser=true
++Axes=Pressure
++Type=Mobile
++
++[0x71]
++# Wacom  ; VID_WACOM    | 0x035F | BAT_SWAP | BAT_GATT | BAT_SHARED | LONGPRESS ("Wacom Bamboo Ink" / CS321A1)
++Name=Bamboo Ink
++Group=isdv4-aes
++Buttons=1
++IsEraser=true
++Axes=Pressure
++Type=Mobile
++
++[0x221]
++# HP     ; VID_CHICONY  | 0xB4A3 | BAT_SWAP | BAT_HID
++# Lenovo ; VID_NONE     | 0x0000 | BAT_SWAP
++Name=AES Pen
++Group=isdv4-aes
++Buttons=1
++IsEraser=true
++Axes=Pressure
++Type=Mobile
++
++[0x231]
++# Dell   ; VID_BROADCOM | 0x81C6 | BAT_SWAP | LONGPRESS (Dell PN557W)
++# HP     ; VID_CHICONY  | 0xB4A3 | BAT_SWAP | BAT_HID
++Name=AES Pen
++Group=isdv4-aes
++Buttons=1
++IsEraser=true
++Axes=Pressure
++Type=Mobile
++
++[0x271]
++# Wacom  ; VID_NONE     | 0x0000 | BAT_SWAP ("Wacom Bamboo Ink" / CS323A)
++Name=Bamboo Ink
++Group=isdv4-aes
++Buttons=1
++IsEraser=true
++Axes=Pressure
++Type=Mobile
++
++[0x421]
++# HP     ; VID_NONE     | 0x0000 | BAT_SWAP
++Name=AES Pen
++Group=isdv4-aes
++Buttons=1
++IsEraser=true
++Axes=Pressure
++Type=Mobile
++
++[0x431]
++# Dell   ; VID_BROADCOM | 0x81B9 | BAT_SWAP
++Name=AES Pen
++Group=isdv4-aes
++Buttons=1
++IsEraser=true
++Axes=Pressure
++Type=Mobile
++
++[0x621]
++# Lenovo ; VID_NONE     | 0x0000 | BAT_SWAP
++Name=AES Pen
++Group=isdv4-aes
++Buttons=1
++IsEraser=true
++Axes=Pressure
++Type=Mobile
++
++[0x631]
++# Dell   ; VID_NONE     | 0x0000 | BAT_SWAP | LONGPRESS (Dell PN557W)
++Name=AES Pen
++Group=isdv4-aes
++Buttons=1
++IsEraser=true
++Axes=Pressure
++Type=Mobile
++
++[0x8051]
++# Google ; VID_NONE     | 0x0000 | BAT_SWAP ("Google Pixelbook Pen" / C0B)
++Name=AES Pen
++Group=isdv4-aes
++Buttons=0
++IsEraser=true
++Axes=Tilt;Pressure
++Type=Mobile
++
++[0x805B]
++# Dell   ; VID_BROADCOM | 0x81D5 | BAT_SWAP | BAT_GATT | BAT_SHARED | LONGPRESS (Dell PN579X)
++# Lenovo ; VID_LENOVO   | 0x60C5 | BAT_SWAP | BAT_GATT | BAT_SHARED
++# Toshiba; VID_NONE     | 0x0000 | BAT_SWAP
++Name=AES Pen
++Group=isdv4-aes
++Buttons=1
++IsEraser=true
++Axes=Tilt;Pressure
++Type=Mobile
++
++[0x806B]
++# HP     ; VID_CHICONY  | 0x1728 | BAT_CHRG | BAT_PROX | BAT_SHARED | LONGPRESS | PROX ("HP Rechargeable Active Pen" / HP Active Pen G2 / 4KL69AA)
++# Huawei ; VID_NONE     | 0x0000 | BAT_SWAP
++# Lenovo ; VID_LENOVO   | 0x60C2 | BAT_CHRG | BAT_GATT | BAT_SHARED
++Name=AES Pen
++Group=isdv4-aes
++Buttons=1
++IsEraser=true
++Axes=Tilt;Pressure
++Type=Mobile
++
++[0x807B]
++# Wacom  ; VID_WACOM    | 0x0397 | BAT_CHRG | BAT_GATT | BAT_SHARED | LONGPRESS ("Wacom Bamboo Ink Plus" / CS322A)
++Name=Bamboo Ink Plus
++Group=isdv4-aes
++Buttons=1
++IsEraser=true
++Axes=Tilt;Pressure
++Type=Mobile
++
++[0x826B]
++# HP     ; VID_CHICONY  | 0x1728 | BAT_CHRG | BAT_PROX | BAT_SHARED | LONGPRESS | PROX
++Name=AES Pen
++Group=isdv4-aes
++Buttons=1
++IsEraser=true
++Axes=Tilt;Pressure
++Type=Mobile
++
++[0x846B]
++# HP     ; VID_CHICONY  | 0x1850 | BAT_CHRG | BAT_GATT | BAT_SHARED | LONGPRESS | PROX ("HP Rechargeable Active Pen G3" / HP Active Pen G3 / GSG43AA)
++Name=AES Pen
++Group=isdv4-aes
++Buttons=1
++IsEraser=true
++Axes=Tilt;Pressure
++Type=Mobile
++
+ # Inking pen have no eraser
+ [0x812]
+ # Intuos and Intuos2
+@@ -521,10 +719,3 @@ Type=Puck
+ HasLens=false
+ HasWheel=true
+ Buttons=5
+-
+-[0x21]
+-Name=Thinkpad Pro Pen
+-Buttons=2
+-HasEraser=false
+-Axes=Pressure;Distance;
+-Type=General

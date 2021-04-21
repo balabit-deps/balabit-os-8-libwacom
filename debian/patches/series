@@ -1,2 +1,10 @@
 #placeholder
 riscv64-test-timeouts.patch
+isdv4-48ca.patch
+isdv4-48ce.patch
+add-isdv4-aes-stylus-group.patch
+add-multiple-AES-stylus-definitions.patch
+split_EMR_specific_stylus_tests.patch
+introduce_WSTYLUS_MOBILE_type.patch
+isdv4-51e9.patch
+meson-build-auto-test.patch

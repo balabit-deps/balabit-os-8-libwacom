@@ -1,0 +1,1037 @@
+commit 8652aa3376bfb0e833af3704dc2ab7948958cd8f
+Author: Jason Gerecke <killertofu@gmail.com>
+Date:   Tue Oct 29 15:26:51 2019 -0700
+
+    Add isdv4-aes stylus group to all AES sensors
+    
+    AES sensors determined based on comments and HID descriptors available
+    at the wacom-hid-descriptors repository, where available. Some pen/sensor
+    combinations may not truly be compatible with each other, but it difficult
+    to know a priori which are problematic. This ultimately doesn't matter
+    *too* much, however, since the ID list is primarily used by tools like
+    GNOME Control Center that just need a rough idea of what pens might work
+    with a given tablet during configuration.
+    
+    Signed-off-by: Jason Gerecke <jason.gerecke@wacom.com>
+
+diff --git a/data/isdv4-2d1f-002e.tablet b/data/isdv4-2d1f-002e.tablet
+index 08abd79..4916509 100644
+--- a/data/isdv4-2d1f-002e.tablet
++++ b/data/isdv4-2d1f-002e.tablet
+@@ -9,6 +9,7 @@ Class=ISDV4
+ Width=12
+ Height=7
+ IntegratedIn=Display;System
++Styli=@isdv4-aes;
+ 
+ [Features]
+ Stylus=true
+diff --git a/data/isdv4-4800.tablet b/data/isdv4-4800.tablet
+index 797e014..08d3852 100644
+--- a/data/isdv4-4800.tablet
++++ b/data/isdv4-4800.tablet
+@@ -6,6 +6,7 @@ ModelName=
+ DeviceMatch=i2c:056a:4800
+ Class=ISDV4
+ IntegratedIn=Display;System
++Styli=@isdv4-aes;
+ 
+ [Features]
+ Stylus=true
+diff --git a/data/isdv4-4806.tablet b/data/isdv4-4806.tablet
+index bb7bf6c..545d6df 100644
+--- a/data/isdv4-4806.tablet
++++ b/data/isdv4-4806.tablet
+@@ -8,6 +8,7 @@ Class=ISDV4
+ Width=9
+ Height=5
+ IntegratedIn=Display;System
++Styli=@isdv4-aes;
+ 
+ [Features]
+ Stylus=true
+diff --git a/data/isdv4-4807.tablet b/data/isdv4-4807.tablet
+index 183ccca..0303705 100644
+--- a/data/isdv4-4807.tablet
++++ b/data/isdv4-4807.tablet
+@@ -8,6 +8,7 @@ Class=ISDV4
+ Width=9
+ Height=5
+ IntegratedIn=Display;System
++Styli=@isdv4-aes;
+ 
+ [Features]
+ Stylus=true
+diff --git a/data/isdv4-4809.tablet b/data/isdv4-4809.tablet
+index ed205d6..fab1531 100644
+--- a/data/isdv4-4809.tablet
++++ b/data/isdv4-4809.tablet
+@@ -8,6 +8,7 @@ Class=ISDV4
+ Width=4
+ Height=7
+ IntegratedIn=Display;System
++Styli=@isdv4-aes;
+ 
+ [Features]
+ Stylus=true
+diff --git a/data/isdv4-4814.tablet b/data/isdv4-4814.tablet
+index 3fe89f2..1da5544 100644
+--- a/data/isdv4-4814.tablet
++++ b/data/isdv4-4814.tablet
+@@ -8,6 +8,7 @@ Class=ISDV4
+ Width=10
+ Height=7
+ IntegratedIn=Display;System
++Styli=@isdv4-aes;
+ 
+ [Features]
+ Stylus=true
+diff --git a/data/isdv4-481a.tablet b/data/isdv4-481a.tablet
+index 47e7c08..eae42aa 100644
+--- a/data/isdv4-481a.tablet
++++ b/data/isdv4-481a.tablet
+@@ -8,6 +8,7 @@ Class=ISDV4
+ Width=12
+ Height=7
+ IntegratedIn=Display;System
++Styli=@isdv4-aes;
+ 
+ [Features]
+ Stylus=true
+diff --git a/data/isdv4-4822.tablet b/data/isdv4-4822.tablet
+index 820fb67..5afdb77 100644
+--- a/data/isdv4-4822.tablet
++++ b/data/isdv4-4822.tablet
+@@ -8,6 +8,7 @@ Class=ISDV4
+ Width=11
+ Height=6
+ IntegratedIn=Display;System
++Styli=@isdv4-aes;
+ 
+ [Features]
+ Stylus=true
+diff --git a/data/isdv4-4824.tablet b/data/isdv4-4824.tablet
+index a0155f6..58cfaed 100644
+--- a/data/isdv4-4824.tablet
++++ b/data/isdv4-4824.tablet
+@@ -8,6 +8,7 @@ Class=ISDV4
+ Width=4
+ Height=7
+ IntegratedIn=Display;System
++Styli=@isdv4-aes;
+ 
+ [Features]
+ Stylus=true
+diff --git a/data/isdv4-4831.tablet b/data/isdv4-4831.tablet
+index b668e4f..7c7e11f 100644
+--- a/data/isdv4-4831.tablet
++++ b/data/isdv4-4831.tablet
+@@ -8,6 +8,7 @@ Class=ISDV4
+ Width=12
+ Height=7
+ IntegratedIn=Display;System
++Styli=@isdv4-aes;
+ 
+ [Features]
+ Stylus=true
+diff --git a/data/isdv4-4841.tablet b/data/isdv4-4841.tablet
+index 1aba3ff..cd136f6 100644
+--- a/data/isdv4-4841.tablet
++++ b/data/isdv4-4841.tablet
+@@ -8,6 +8,7 @@ Class=ISDV4
+ Width=12
+ Height=7
+ IntegratedIn=Display;System
++Styli=@isdv4-aes;
+ 
+ [Features]
+ Stylus=true
+diff --git a/data/isdv4-484c.tablet b/data/isdv4-484c.tablet
+index 7c71edd..1a7a6b4 100644
+--- a/data/isdv4-484c.tablet
++++ b/data/isdv4-484c.tablet
+@@ -8,6 +8,7 @@ Class=ISDV4
+ Width=10
+ Height=7
+ IntegratedIn=Display;System
++Styli=@isdv4-aes;
+ 
+ [Features]
+ Stylus=true
+diff --git a/data/isdv4-485e.tablet b/data/isdv4-485e.tablet
+index c520c15..83b9558 100644
+--- a/data/isdv4-485e.tablet
++++ b/data/isdv4-485e.tablet
+@@ -8,6 +8,7 @@ Class=ISDV4
+ Width=10
+ Height=7
+ IntegratedIn=Display;System
++Styli=@isdv4-aes;
+ 
+ [Features]
+ Stylus=true
+diff --git a/data/isdv4-4865.tablet b/data/isdv4-4865.tablet
+index 8a62c16..bce73dc 100644
+--- a/data/isdv4-4865.tablet
++++ b/data/isdv4-4865.tablet
+@@ -8,6 +8,7 @@ Class=ISDV4
+ Width=11
+ Height=6
+ IntegratedIn=Display;System
++Styli=@isdv4-aes;
+ 
+ [Features]
+ Stylus=true
+diff --git a/data/isdv4-486a.tablet b/data/isdv4-486a.tablet
+index 57773ff..92cdf46 100644
+--- a/data/isdv4-486a.tablet
++++ b/data/isdv4-486a.tablet
+@@ -8,6 +8,7 @@ Class=ISDV4
+ Width=14
+ Height=8
+ IntegratedIn=Display;System
++Styli=@isdv4-aes;
+ 
+ [Features]
+ Stylus=true
+diff --git a/data/isdv4-4870.tablet b/data/isdv4-4870.tablet
+index 26695d5..b4af151 100644
+--- a/data/isdv4-4870.tablet
++++ b/data/isdv4-4870.tablet
+@@ -8,6 +8,7 @@ Class=ISDV4
+ Width=11
+ Height=7
+ IntegratedIn=Display;System
++Styli=@isdv4-aes;
+ 
+ [Features]
+ Stylus=true
+diff --git a/data/isdv4-4875.tablet b/data/isdv4-4875.tablet
+index 7a1bff9..deedbb9 100644
+--- a/data/isdv4-4875.tablet
++++ b/data/isdv4-4875.tablet
+@@ -8,6 +8,7 @@ Class=ISDV4
+ Width=14
+ Height=8
+ IntegratedIn=Display;System
++Styli=@isdv4-aes;
+ 
+ [Features]
+ Stylus=true
+diff --git a/data/isdv4-488f.tablet b/data/isdv4-488f.tablet
+index 3d68472..0ac9314 100644
+--- a/data/isdv4-488f.tablet
++++ b/data/isdv4-488f.tablet
+@@ -8,6 +8,7 @@ Class=ISDV4
+ Width=14
+ Height=8
+ IntegratedIn=Display;System
++Styli=@isdv4-aes;
+ 
+ [Features]
+ Stylus=true
+diff --git a/data/isdv4-48c9.tablet b/data/isdv4-48c9.tablet
+index 1e96962..231a6bf 100644
+--- a/data/isdv4-48c9.tablet
++++ b/data/isdv4-48c9.tablet
+@@ -8,6 +8,7 @@ Class=ISDV4
+ Width=12
+ Height=7
+ IntegratedIn=Display;System
++Styli=@isdv4-aes;
+ 
+ [Features]
+ Stylus=true
+diff --git a/data/isdv4-48ca.tablet b/data/isdv4-48ca.tablet
+index d29c45b..079bf1e 100644
+--- a/data/isdv4-48ca.tablet
++++ b/data/isdv4-48ca.tablet
+@@ -14,6 +14,7 @@ Class=ISDV4
+ Width=12
+ Height=7
+ IntegratedIn=Display;System
++Styli=@isdv4-aes;
+ 
+ [Features]
+ Stylus=true
+diff --git a/data/isdv4-48ce.tablet b/data/isdv4-48ce.tablet
+index d581dad..5e2b22c 100644
+--- a/data/isdv4-48ce.tablet
++++ b/data/isdv4-48ce.tablet
+@@ -14,6 +14,7 @@ Class=ISDV4
+ Width=10
+ Height=7
+ IntegratedIn=Display;System
++Styli=@isdv4-aes;
+ 
+ [Features]
+ Stylus=true
+diff --git a/data/isdv4-48ec.tablet b/data/isdv4-48ec.tablet
+index 45a5aeb..0cd4f61 100644
+--- a/data/isdv4-48ec.tablet
++++ b/data/isdv4-48ec.tablet
+@@ -8,6 +8,7 @@ Class=ISDV4
+ Width=11
+ Height=7
+ IntegratedIn=Display;System
++Styli=@isdv4-aes;
+ 
+ [Features]
+ Stylus=true
+diff --git a/data/isdv4-48ed.tablet b/data/isdv4-48ed.tablet
+index 788f089..4fe69c3 100644
+--- a/data/isdv4-48ed.tablet
++++ b/data/isdv4-48ed.tablet
+@@ -8,6 +8,7 @@ Class=ISDV4
+ Width=11
+ Height=7
+ IntegratedIn=Display;System
++Styli=@isdv4-aes;
+ 
+ [Features]
+ Stylus=true
+diff --git a/data/isdv4-48ee.tablet b/data/isdv4-48ee.tablet
+index 12a7890..9a05d87 100644
+--- a/data/isdv4-48ee.tablet
++++ b/data/isdv4-48ee.tablet
+@@ -8,6 +8,7 @@ Class=ISDV4
+ Width=11
+ Height=7
+ IntegratedIn=Display;System
++Styli=@isdv4-aes;
+ 
+ [Features]
+ Stylus=true
+diff --git a/data/isdv4-5010.tablet b/data/isdv4-5010.tablet
+index 89d8014..35e748a 100644
+--- a/data/isdv4-5010.tablet
++++ b/data/isdv4-5010.tablet
+@@ -8,6 +8,7 @@ Class=ISDV4
+ Width=11
+ Height=6
+ IntegratedIn=Display;System
++Styli=@isdv4-aes;
+ 
+ [Features]
+ Stylus=true
+diff --git a/data/isdv4-5013.tablet b/data/isdv4-5013.tablet
+index 3b7965e..060757c 100644
+--- a/data/isdv4-5013.tablet
++++ b/data/isdv4-5013.tablet
+@@ -8,6 +8,7 @@ Class=ISDV4
+ Width=12
+ Height=7
+ IntegratedIn=Display;System
++Styli=@isdv4-aes;
+ 
+ [Features]
+ Stylus=true
+diff --git a/data/isdv4-5014.tablet b/data/isdv4-5014.tablet
+index 27a5092..62a680d 100644
+--- a/data/isdv4-5014.tablet
++++ b/data/isdv4-5014.tablet
+@@ -9,6 +9,7 @@ Class=ISDV4
+ Width=10
+ Height=6
+ IntegratedIn=Display;System
++Styli=@isdv4-aes;
+ 
+ [Features]
+ Stylus=true
+diff --git a/data/isdv4-502a.tablet b/data/isdv4-502a.tablet
+index 3a89717..8281a6d 100644
+--- a/data/isdv4-502a.tablet
++++ b/data/isdv4-502a.tablet
+@@ -8,6 +8,7 @@ Class=ISDV4
+ Width=11
+ Height=6
+ IntegratedIn=Display;System
++Styli=@isdv4-aes;
+ 
+ [Features]
+ Stylus=true
+diff --git a/data/isdv4-503e.tablet b/data/isdv4-503e.tablet
+index b3ad723..066fb3d 100644
+--- a/data/isdv4-503e.tablet
++++ b/data/isdv4-503e.tablet
+@@ -10,6 +10,7 @@ Class=ISDV4
+ Width=12
+ Height=7
+ IntegratedIn=Display;System
++Styli=@isdv4-aes;
+ 
+ [Features]
+ Stylus=true
+diff --git a/data/isdv4-503f.tablet b/data/isdv4-503f.tablet
+index 5e2b134..194076a 100644
+--- a/data/isdv4-503f.tablet
++++ b/data/isdv4-503f.tablet
+@@ -10,6 +10,7 @@ Class=ISDV4
+ Width=12
+ Height=7
+ IntegratedIn=Display;System
++Styli=@isdv4-aes;
+ 
+ [Features]
+ Stylus=true
+diff --git a/data/isdv4-5040.tablet b/data/isdv4-5040.tablet
+index 3dca14d..a73d155 100644
+--- a/data/isdv4-5040.tablet
++++ b/data/isdv4-5040.tablet
+@@ -11,6 +11,7 @@ Class=ISDV4
+ Width=12
+ Height=7
+ IntegratedIn=Display;System
++Styli=@isdv4-aes;
+ 
+ [Features]
+ Stylus=true
+diff --git a/data/isdv4-5044.tablet b/data/isdv4-5044.tablet
+index 7079ca3..5baaefd 100644
+--- a/data/isdv4-5044.tablet
++++ b/data/isdv4-5044.tablet
+@@ -11,6 +11,7 @@ Class=ISDV4
+ Width=11
+ Height=6
+ IntegratedIn=Display;System
++Styli=@isdv4-aes;
+ 
+ [Features]
+ Stylus=true
+diff --git a/data/isdv4-5048.tablet b/data/isdv4-5048.tablet
+index 8da28aa..ec3f9f2 100644
+--- a/data/isdv4-5048.tablet
++++ b/data/isdv4-5048.tablet
+@@ -10,6 +10,7 @@ Class=ISDV4
+ Width=10
+ Height=6
+ IntegratedIn=Display;System
++Styli=@isdv4-aes;
+ 
+ [Features]
+ Stylus=true
+diff --git a/data/isdv4-504a.tablet b/data/isdv4-504a.tablet
+index 20048f9..07d91fc 100644
+--- a/data/isdv4-504a.tablet
++++ b/data/isdv4-504a.tablet
+@@ -8,6 +8,7 @@ Class=ISDV4
+ Width=12
+ Height=7
+ IntegratedIn=Display;System
++Styli=@isdv4-aes;
+ 
+ [Features]
+ Stylus=true
+diff --git a/data/isdv4-5090.tablet b/data/isdv4-5090.tablet
+index d28830c..be1e555 100644
+--- a/data/isdv4-5090.tablet
++++ b/data/isdv4-5090.tablet
+@@ -8,6 +8,7 @@ Class=ISDV4
+ Width=11
+ Height=6
+ IntegratedIn=Display;System
++Styli=@isdv4-aes;
+ 
+ [Features]
+ Stylus=true
+diff --git a/data/isdv4-5099.tablet b/data/isdv4-5099.tablet
+index fd81949..c0e53bd 100644
+--- a/data/isdv4-5099.tablet
++++ b/data/isdv4-5099.tablet
+@@ -8,6 +8,7 @@ Class=ISDV4
+ Width=10
+ Height=7
+ IntegratedIn=Display;System
++Styli=@isdv4-aes;
+ 
+ [Features]
+ Stylus=true
+diff --git a/data/isdv4-509d.tablet b/data/isdv4-509d.tablet
+index b3b9baa..0dad8ad 100644
+--- a/data/isdv4-509d.tablet
++++ b/data/isdv4-509d.tablet
+@@ -8,6 +8,7 @@ Class=ISDV4
+ Width=12
+ Height=7
+ IntegratedIn=Display;System
++Styli=@isdv4-aes;
+ 
+ [Features]
+ Stylus=true
+diff --git a/data/isdv4-509f.tablet b/data/isdv4-509f.tablet
+index 069f398..093d4d7 100644
+--- a/data/isdv4-509f.tablet
++++ b/data/isdv4-509f.tablet
+@@ -14,6 +14,7 @@ Class=ISDV4
+ Width=12
+ Height=7
+ IntegratedIn=Display;System
++Styli=@isdv4-aes;
+ 
+ [Features]
+ Stylus=true
+diff --git a/data/isdv4-50b4.tablet b/data/isdv4-50b4.tablet
+index 2c67b8b..d82a6cc 100644
+--- a/data/isdv4-50b4.tablet
++++ b/data/isdv4-50b4.tablet
+@@ -8,6 +8,7 @@ Class=ISDV4
+ Width=12
+ Height=7
+ IntegratedIn=Display;System
++Styli=@isdv4-aes;
+ 
+ [Features]
+ Stylus=true
+diff --git a/data/isdv4-50b6.tablet b/data/isdv4-50b6.tablet
+index df32278..0609a59 100644
+--- a/data/isdv4-50b6.tablet
++++ b/data/isdv4-50b6.tablet
+@@ -8,6 +8,7 @@ Class=ISDV4
+ Width=12
+ Height=7
+ IntegratedIn=Display;System
++Styli=@isdv4-aes;
+ 
+ [Features]
+ Stylus=true
+diff --git a/data/isdv4-50b8.tablet b/data/isdv4-50b8.tablet
+index bf13058..b0d3324 100644
+--- a/data/isdv4-50b8.tablet
++++ b/data/isdv4-50b8.tablet
+@@ -8,6 +8,7 @@ Class=ISDV4
+ Width=12
+ Height=7
+ IntegratedIn=Display;System
++Styli=@isdv4-aes;
+ 
+ [Features]
+ Stylus=true
+diff --git a/data/isdv4-50db.tablet b/data/isdv4-50db.tablet
+index 15acb60..e151cfc 100644
+--- a/data/isdv4-50db.tablet
++++ b/data/isdv4-50db.tablet
+@@ -8,6 +8,7 @@ Class=ISDV4
+ Width=12
+ Height=7
+ IntegratedIn=Display;System
++Styli=@isdv4-aes;
+ 
+ [Features]
+ Stylus=true
+diff --git a/data/isdv4-50e9.tablet b/data/isdv4-50e9.tablet
+index ec714f7..9a9730f 100644
+--- a/data/isdv4-50e9.tablet
++++ b/data/isdv4-50e9.tablet
+@@ -8,6 +8,7 @@ Class=ISDV4
+ Width=14
+ Height=8
+ IntegratedIn=Display;System
++Styli=@isdv4-aes;
+ 
+ [Features]
+ Stylus=true
+diff --git a/data/isdv4-50ef.tablet b/data/isdv4-50ef.tablet
+index 8bd9650..4d7661a 100644
+--- a/data/isdv4-50ef.tablet
++++ b/data/isdv4-50ef.tablet
+@@ -8,6 +8,7 @@ Class=ISDV4
+ Width=12
+ Height=6
+ IntegratedIn=Display;System
++Styli=@isdv4-aes;
+ 
+ [Features]
+ Stylus=true
+diff --git a/data/isdv4-50f1.tablet b/data/isdv4-50f1.tablet
+index 26fec65..314fd1e 100644
+--- a/data/isdv4-50f1.tablet
++++ b/data/isdv4-50f1.tablet
+@@ -8,6 +8,7 @@ Class=ISDV4
+ Width=12
+ Height=7
+ IntegratedIn=Display;System
++Styli=@isdv4-aes;
+ 
+ [Features]
+ Stylus=true
+diff --git a/data/isdv4-50f8.tablet b/data/isdv4-50f8.tablet
+index 151e8ea..e3fe04b 100644
+--- a/data/isdv4-50f8.tablet
++++ b/data/isdv4-50f8.tablet
+@@ -8,6 +8,7 @@ Class=ISDV4
+ Width=14
+ Height=8
+ IntegratedIn=Display;System
++Styli=@isdv4-aes;
+ 
+ [Features]
+ Stylus=true
+diff --git a/data/isdv4-50fd.tablet b/data/isdv4-50fd.tablet
+index 1d3f06a..f470d5d 100644
+--- a/data/isdv4-50fd.tablet
++++ b/data/isdv4-50fd.tablet
+@@ -8,6 +8,7 @@ Class=ISDV4
+ Width=14
+ Height=8
+ IntegratedIn=Display;System
++Styli=@isdv4-aes;
+ 
+ [Features]
+ Stylus=true
+diff --git a/data/isdv4-5110.tablet b/data/isdv4-5110.tablet
+index 4a0181a..1882bad 100644
+--- a/data/isdv4-5110.tablet
++++ b/data/isdv4-5110.tablet
+@@ -8,6 +8,7 @@ Class=ISDV4
+ Width=12
+ Height=7
+ IntegratedIn=Display;System
++Styli=@isdv4-aes;
+ 
+ [Features]
+ Stylus=true
+diff --git a/data/isdv4-5115.tablet b/data/isdv4-5115.tablet
+index a73c8b9..f373922 100644
+--- a/data/isdv4-5115.tablet
++++ b/data/isdv4-5115.tablet
+@@ -7,7 +7,7 @@ Class=ISDV4
+ Width=10
+ Height=7
+ IntegratedIn=Display;System
+-Styli=0x21;
++Styli=@isdv4-aes;
+ 
+ [Features]
+ Stylus=true
+diff --git a/data/isdv4-5122.tablet b/data/isdv4-5122.tablet
+index 3e1543e..b8948ee 100644
+--- a/data/isdv4-5122.tablet
++++ b/data/isdv4-5122.tablet
+@@ -8,6 +8,7 @@ Class=ISDV4
+ Width=10
+ Height=6
+ IntegratedIn=Display;System
++Styli=@isdv4-aes;
+ 
+ [Features]
+ Stylus=true
+diff --git a/data/isdv4-5128.tablet b/data/isdv4-5128.tablet
+index 909d7ce..4303695 100644
+--- a/data/isdv4-5128.tablet
++++ b/data/isdv4-5128.tablet
+@@ -8,6 +8,7 @@ Class=ISDV4
+ Width=11
+ Height=6
+ IntegratedIn=Display;System
++Styli=@isdv4-aes;
+ 
+ [Features]
+ Stylus=true
+diff --git a/data/isdv4-513b.tablet b/data/isdv4-513b.tablet
+index 5257f5b..750ecfa 100644
+--- a/data/isdv4-513b.tablet
++++ b/data/isdv4-513b.tablet
+@@ -8,6 +8,7 @@ Class=ISDV4
+ Width=10
+ Height=6
+ IntegratedIn=Display;System
++Styli=@isdv4-aes;
+ 
+ [Features]
+ Stylus=true
+diff --git a/data/isdv4-5146.tablet b/data/isdv4-5146.tablet
+index 5bd44bc..755929c 100644
+--- a/data/isdv4-5146.tablet
++++ b/data/isdv4-5146.tablet
+@@ -8,6 +8,7 @@ Class=ISDV4
+ Width=12
+ Height=7
+ IntegratedIn=Display;System
++Styli=@isdv4-aes;
+ 
+ [Features]
+ Stylus=true
+diff --git a/data/isdv4-5147.tablet b/data/isdv4-5147.tablet
+index 9a5a386..45c66e8 100644
+--- a/data/isdv4-5147.tablet
++++ b/data/isdv4-5147.tablet
+@@ -8,6 +8,7 @@ Class=ISDV4
+ Width=12
+ Height=7
+ IntegratedIn=Display;System
++Styli=@isdv4-aes;
+ 
+ [Features]
+ Stylus=true
+diff --git a/data/isdv4-5150.tablet b/data/isdv4-5150.tablet
+index 9201c3b..d815286 100644
+--- a/data/isdv4-5150.tablet
++++ b/data/isdv4-5150.tablet
+@@ -8,6 +8,7 @@ Class=ISDV4
+ Width=12
+ Height=7
+ IntegratedIn=Display;System
++Styli=@isdv4-aes;
+ 
+ [Features]
+ Stylus=true
+diff --git a/data/isdv4-5157.tablet b/data/isdv4-5157.tablet
+index 76aa911..4bec285 100644
+--- a/data/isdv4-5157.tablet
++++ b/data/isdv4-5157.tablet
+@@ -8,6 +8,7 @@ Class=ISDV4
+ Width=12
+ Height=7
+ IntegratedIn=Display;System;
++Styli=@isdv4-aes;
+ 
+ [Features]
+ Stylus=true
+diff --git a/data/isdv4-5158.tablet b/data/isdv4-5158.tablet
+index c2bf0fb..972e4b1 100644
+--- a/data/isdv4-5158.tablet
++++ b/data/isdv4-5158.tablet
+@@ -8,6 +8,7 @@ Class=ISDV4
+ Width=12
+ Height=7
+ IntegratedIn=Display;System;
++Styli=@isdv4-aes;
+ 
+ [Features]
+ Stylus=true
+diff --git a/data/isdv4-515a.tablet b/data/isdv4-515a.tablet
+index 1b62be2..952880d 100644
+--- a/data/isdv4-515a.tablet
++++ b/data/isdv4-515a.tablet
+@@ -8,6 +8,7 @@ Class=ISDV4
+ Width=12
+ Height=7
+ IntegratedIn=Display;System;
++Styli=@isdv4-aes;
+ 
+ [Features]
+ Stylus=true
+diff --git a/data/isdv4-5169.tablet b/data/isdv4-5169.tablet
+index 15648e3..b218fef 100644
+--- a/data/isdv4-5169.tablet
++++ b/data/isdv4-5169.tablet
+@@ -8,6 +8,7 @@ Class=ISDV4
+ Width=14
+ Height=8
+ IntegratedIn=Display;System
++Styli=@isdv4-aes;
+ 
+ [Features]
+ Stylus=true
+diff --git a/data/isdv4-516b.tablet b/data/isdv4-516b.tablet
+index bdd2f36..0074ff0 100644
+--- a/data/isdv4-516b.tablet
++++ b/data/isdv4-516b.tablet
+@@ -8,6 +8,7 @@ Class=ISDV4
+ Width=14
+ Height=8
+ IntegratedIn=Display;System
++Styli=@isdv4-aes;
+ 
+ [Features]
+ Stylus=true
+diff --git a/data/isdv4-517d.tablet b/data/isdv4-517d.tablet
+index 70ccd48..2fd0e3e 100644
+--- a/data/isdv4-517d.tablet
++++ b/data/isdv4-517d.tablet
+@@ -8,6 +8,7 @@ Class=ISDV4
+ Width=12
+ Height=7
+ IntegratedIn=Display;System
++Styli=@isdv4-aes;
+ 
+ [Features]
+ Stylus=true
+diff --git a/data/isdv4-5196.tablet b/data/isdv4-5196.tablet
+index eb5e15f..d3c7e8a 100644
+--- a/data/isdv4-5196.tablet
++++ b/data/isdv4-5196.tablet
+@@ -8,6 +8,7 @@ Class=ISDV4
+ Width=12
+ Height=7
+ IntegratedIn=Display;System
++Styli=@isdv4-aes;
+ 
+ [Features]
+ Stylus=true
+diff --git a/data/isdv4-51a0.tablet b/data/isdv4-51a0.tablet
+index e038f65..a843789 100644
+--- a/data/isdv4-51a0.tablet
++++ b/data/isdv4-51a0.tablet
+@@ -8,6 +8,7 @@ Class=ISDV4
+ Width=14
+ Height=8
+ IntegratedIn=Display;System
++Styli=@isdv4-aes;
+ 
+ [Features]
+ Stylus=true
+diff --git a/data/isdv4-51af.tablet b/data/isdv4-51af.tablet
+index fff3af8..c5d1b1a 100644
+--- a/data/isdv4-51af.tablet
++++ b/data/isdv4-51af.tablet
+@@ -8,6 +8,7 @@ Class=ISDV4
+ Width=12
+ Height=7
+ IntegratedIn=Display;System
++Styli=@isdv4-aes;
+ 
+ [Features]
+ Stylus=true
+diff --git a/data/isdv4-51b0.tablet b/data/isdv4-51b0.tablet
+index 2cdf321..5340b23 100644
+--- a/data/isdv4-51b0.tablet
++++ b/data/isdv4-51b0.tablet
+@@ -15,6 +15,7 @@ Class=ISDV4
+ Width=12
+ Height=7
+ IntegratedIn=Display;System
++Styli=@isdv4-aes;
+ 
+ [Features]
+ Stylus=true
+diff --git a/data/isdv4-51b1.tablet b/data/isdv4-51b1.tablet
+index 557b165..90a90a9 100644
+--- a/data/isdv4-51b1.tablet
++++ b/data/isdv4-51b1.tablet
+@@ -15,6 +15,7 @@ Class=ISDV4
+ Width=12
+ Height=7
+ IntegratedIn=Display;System
++Styli=@isdv4-aes;
+ 
+ [Features]
+ Stylus=true
+diff --git a/data/isdv4-51b2.tablet b/data/isdv4-51b2.tablet
+index 0f3e7b1..43f9be5 100644
+--- a/data/isdv4-51b2.tablet
++++ b/data/isdv4-51b2.tablet
+@@ -15,6 +15,7 @@ Class=ISDV4
+ Width=12
+ Height=7
+ IntegratedIn=Display;System
++Styli=@isdv4-aes;
+ 
+ [Features]
+ Stylus=true
+diff --git a/data/isdv4-51b3.tablet b/data/isdv4-51b3.tablet
+index 4a1aab1..1d213a1 100644
+--- a/data/isdv4-51b3.tablet
++++ b/data/isdv4-51b3.tablet
+@@ -15,6 +15,7 @@ Class=ISDV4
+ Width=12
+ Height=7
+ IntegratedIn=Display;System
++Styli=@isdv4-aes;
+ 
+ [Features]
+ Stylus=true
+diff --git a/data/isdv4-51b6.tablet b/data/isdv4-51b6.tablet
+index ff2ffd7..8adb365 100644
+--- a/data/isdv4-51b6.tablet
++++ b/data/isdv4-51b6.tablet
+@@ -15,6 +15,7 @@ Class=ISDV4
+ Width=12
+ Height=7
+ IntegratedIn=Display;System
++Styli=@isdv4-aes;
+ 
+ [Features]
+ Stylus=true
+diff --git a/data/isdv4-51b7.tablet b/data/isdv4-51b7.tablet
+index 93f5450..745d0ab 100644
+--- a/data/isdv4-51b7.tablet
++++ b/data/isdv4-51b7.tablet
+@@ -15,6 +15,7 @@ Class=ISDV4
+ Width=12
+ Height=7
+ IntegratedIn=Display;System
++Styli=@isdv4-aes;
+ 
+ [Features]
+ Stylus=true
+diff --git a/data/isdv4-51b8.tablet b/data/isdv4-51b8.tablet
+index fb06081..d55a3c3 100644
+--- a/data/isdv4-51b8.tablet
++++ b/data/isdv4-51b8.tablet
+@@ -8,6 +8,7 @@ Class=ISDV4
+ Width=12
+ Height=7
+ IntegratedIn=Display;System
++Styli=@isdv4-aes;
+ 
+ [Features]
+ Stylus=true
+diff --git a/data/isdv4-51b9.tablet b/data/isdv4-51b9.tablet
+index e977672..31a9791 100644
+--- a/data/isdv4-51b9.tablet
++++ b/data/isdv4-51b9.tablet
+@@ -15,6 +15,7 @@ Class=ISDV4
+ Width=12
+ Height=7
+ IntegratedIn=Display;System
++Styli=@isdv4-aes;
+ 
+ [Features]
+ Stylus=true
+diff --git a/data/isdv4-51ba.tablet b/data/isdv4-51ba.tablet
+index 20a6deb..8c7f7f9 100644
+--- a/data/isdv4-51ba.tablet
++++ b/data/isdv4-51ba.tablet
+@@ -10,6 +10,7 @@ Class=ISDV4
+ Width=12
+ Height=7
+ IntegratedIn=Display;System
++Styli=@isdv4-aes;
+ 
+ [Features]
+ Stylus=true
+diff --git a/data/isdv4-51bb.tablet b/data/isdv4-51bb.tablet
+index 2e5c848..d7cc6c9 100644
+--- a/data/isdv4-51bb.tablet
++++ b/data/isdv4-51bb.tablet
+@@ -15,6 +15,7 @@ Class=ISDV4
+ Width=12
+ Height=7
+ IntegratedIn=Display;System
++Styli=@isdv4-aes;
+ 
+ [Features]
+ Stylus=true
+diff --git a/data/isdv4-51bc.tablet b/data/isdv4-51bc.tablet
+index fddd9fb..9e84da9 100644
+--- a/data/isdv4-51bc.tablet
++++ b/data/isdv4-51bc.tablet
+@@ -15,6 +15,7 @@ Class=ISDV4
+ Width=12
+ Height=7
+ IntegratedIn=Display;System
++Styli=@isdv4-aes;
+ 
+ [Features]
+ Stylus=true
+diff --git a/data/isdv4-51bd.tablet b/data/isdv4-51bd.tablet
+index 6d16649..1b9a7fd 100644
+--- a/data/isdv4-51bd.tablet
++++ b/data/isdv4-51bd.tablet
+@@ -10,6 +10,7 @@ Class=ISDV4
+ Width=12
+ Height=7
+ IntegratedIn=Display;System
++Styli=@isdv4-aes;
+ 
+ [Features]
+ Stylus=true
+diff --git a/data/isdv4-51be.tablet b/data/isdv4-51be.tablet
+index c783a21..f2af426 100644
+--- a/data/isdv4-51be.tablet
++++ b/data/isdv4-51be.tablet
+@@ -8,6 +8,7 @@ Class=ISDV4
+ Width=12
+ Height=7
+ IntegratedIn=Display;System
++Styli=@isdv4-aes;
+ 
+ [Features]
+ Stylus=true
+diff --git a/data/isdv4-51bf.tablet b/data/isdv4-51bf.tablet
+index 258825b..99a18e6 100644
+--- a/data/isdv4-51bf.tablet
++++ b/data/isdv4-51bf.tablet
+@@ -8,6 +8,7 @@ Class=ISDV4
+ Width=12
+ Height=7
+ IntegratedIn=Display;System
++Styli=@isdv4-aes;
+ 
+ [Features]
+ Stylus=true
+diff --git a/data/isdv4-51c4.tablet b/data/isdv4-51c4.tablet
+index 2fa1bca..999620a 100644
+--- a/data/isdv4-51c4.tablet
++++ b/data/isdv4-51c4.tablet
+@@ -8,6 +8,7 @@ Class=ISDV4
+ Width=12
+ Height=7
+ IntegratedIn=Display;System
++Styli=@isdv4-aes;
+ 
+ [Features]
+ Stylus=true
+diff --git a/data/isdv4-51e2.tablet b/data/isdv4-51e2.tablet
+index 363546a..4f586e1 100644
+--- a/data/isdv4-51e2.tablet
++++ b/data/isdv4-51e2.tablet
+@@ -9,6 +9,7 @@ Class=ISDV4
+ Width=12
+ Height=7
+ IntegratedIn=Display;System
++Styli=@isdv4-aes;
+ 
+ [Features]
+ Stylus=true
+diff --git a/data/isdv4-51f5.tablet b/data/isdv4-51f5.tablet
+index a8205bb..9997754 100644
+--- a/data/isdv4-51f5.tablet
++++ b/data/isdv4-51f5.tablet
+@@ -9,6 +9,7 @@ Class=ISDV4
+ Width=12
+ Height=7
+ IntegratedIn=Display;System
++Styli=@isdv4-aes;
+ 
+ [Features]
+ Stylus=true
+diff --git a/data/isdv4-51f6.tablet b/data/isdv4-51f6.tablet
+index 853abe2..c400786 100644
+--- a/data/isdv4-51f6.tablet
++++ b/data/isdv4-51f6.tablet
+@@ -9,6 +9,7 @@ Class=ISDV4
+ Width=12
+ Height=7
+ IntegratedIn=Display;System
++Styli=@isdv4-aes;
+ 
+ [Features]
+ Stylus=true
+diff --git a/data/isdv4-521f.tablet b/data/isdv4-521f.tablet
+index 91afd3d..6eac6f6 100644
+--- a/data/isdv4-521f.tablet
++++ b/data/isdv4-521f.tablet
+@@ -15,6 +15,7 @@ Class=ISDV4
+ Width=12
+ Height=7
+ IntegratedIn=Display;System
++Styli=@isdv4-aes;
+ 
+ [Features]
+ Stylus=true
+diff --git a/data/isdv4-5221.tablet b/data/isdv4-5221.tablet
+index b70300d..35ba7ff 100644
+--- a/data/isdv4-5221.tablet
++++ b/data/isdv4-5221.tablet
+@@ -15,6 +15,7 @@ Class=ISDV4
+ Width=12
+ Height=7
+ IntegratedIn=Display;System
++Styli=@isdv4-aes;
+ 
+ [Features]
+ Stylus=true
+diff --git a/data/isdv4-5222.tablet b/data/isdv4-5222.tablet
+index b303327..b486280 100644
+--- a/data/isdv4-5222.tablet
++++ b/data/isdv4-5222.tablet
+@@ -15,6 +15,7 @@ Class=ISDV4
+ Width=12
+ Height=7
+ IntegratedIn=Display;System
++Styli=@isdv4-aes;
+ 
+ [Features]
+ Stylus=true
